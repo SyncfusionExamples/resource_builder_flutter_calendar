@@ -6,38 +6,9 @@ This example demonstrates how to use resource builder in the Flutter Calendar.
 
 In the Flutter Calendar, you can add custom widgets for resources by using the [resourceHeaderBuilder](https://pub.dev/documentation/syncfusion_flutter_calendar/latest/calendar/ResourceViewHeaderBuilder.html) property of the calendar.
 
-```
+In this sample, we have created a resource view by setting the displayName, color, id, and image property of the CalendarResource. Then the resource view header has been customized with the help of the resourceHeaderBuilder property in the calendar.
 
-child: SfCalendar(
-view: CalendarView.timelineWeek,
-showDatePickerButton: true,
-allowedViews: _allowedViews,
-dataSource: _events,
-resourceViewHeaderBuilder: resourceBuilder,
-),
-
-Widget resourceBuilder(
-    BuildContext context, ResourceViewHeaderDetails details) {
-  if (details.resource.image != null) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        CircleAvatar(backgroundImage:details.resource.image,backgroundColor: details.resource.color),
-        Center(child: Text(details.resource.displayName,textAlign: TextAlign.center,)),
-      ],
-    );
-  }
-  else {
-    return Container(
-      color: details.resource.color,
-      child: Text(details.resource.displayName),
-    );
-  }
-}
-
-```
+Refer to our UG documentation to create [resources](https://help.syncfusion.com/flutter/calendar/resource-view) in the Calendar
 
 You can also refer our UG documentation to know more about [ResourceViewBuilder](https://help.syncfusion.com/flutter/calendar/builders#resource-view-header-builder) in the Flutter Calendar.
 
