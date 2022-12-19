@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 void main() => runApp(const ResourceViewBuilder());
@@ -95,7 +94,7 @@ class ResourceViewBuilderState extends State<ResourceViewBuilder> {
     for (int i = 0; i < _nameCollection.length; i++) {
       _employeeCollection.add(CalendarResource(
           displayName: _nameCollection[i],
-          id: '000' + i.toString(),
+          id: '000$i',
           color: Color.fromRGBO(
               random.nextInt(255), random.nextInt(255), random.nextInt(255), 1),
           image:
